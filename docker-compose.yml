@@ -1,0 +1,9 @@
+version: '3.7'
+
+services:
+  app:
+    image: to-no-mei
+    build: .
+    container_name: to-no-mei
+    ports:
+      - "8080:8080"
