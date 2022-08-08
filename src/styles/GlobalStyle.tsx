@@ -1,7 +1,7 @@
 import { Row } from "react-bootstrap";
 import { styled } from "@/stitches.config";
 
-const Header = styled(Row, {
+const HeaderStyle = styled(Row, {
     backgroundColor: "#0e002e",
 });
 
@@ -49,7 +49,7 @@ const Button = styled("button", {
 });
 
 export {
-    Header,
+    HeaderStyle,
     Title,
     Button
 }

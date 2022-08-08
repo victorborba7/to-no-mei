@@ -1,7 +1,7 @@
 import React from "react";
-import { Login } from "./pages/Login"
 import { globalCss } from "./stitches.config";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Router from "@/router/routes";
 
 const globalStyles = globalCss({
   '*': { margin: 0, padding: 0 },
@@ -10,11 +10,7 @@ const globalStyles = globalCss({
 function App() {
   globalStyles();
   
-  return (
-    <div>
-      <Login />
-    </div>
-  )
+  return <Router />
 }
 
 export default App

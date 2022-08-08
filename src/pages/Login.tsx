@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Form, Row } from "react-bootstrap";
-import { Button, Header, Title } from "@/styles/GlobalStyle";
+import { Button, HeaderStyle, Title } from "@/styles/GlobalStyle";
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa"
 import { styled } from "@/stitches.config";
 import LogoAzul from "@/assets/logo_azul_verde.png"
@@ -21,10 +21,10 @@ const Logo = styled("img", {
     width: "100%"
 })
 
-export function Login() {
+export default function Login() {
     return (
         <div>
-            <Header className="justify-content-end py-3">
+            <HeaderStyle className="justify-content-end py-3">
                 <Col xs={8} md={4}>
                     <Row className="justify-content-end">
                         <Col xs={6} className="d-flex justify-content-center align-items-center">
@@ -34,7 +34,7 @@ export function Login() {
                         </Col>
                     </Row>
                 </Col>
-            </Header>
+            </HeaderStyle>
             <Row className="justify-content-center mt-5">
                 <Col xs={11}>
                     <Row className="justify-content-around align-items-center">
