@@ -5,6 +5,7 @@ import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa"
 import { styled } from "@/stitches.config";
 import LogoAzul from "@/assets/logo_azul_verde.png"
 import Mulher from "@/assets/mulher_login.jpeg"
+import { useNavigate } from "react-router-dom";
 
 const Input = styled(Form.Control, {
     borderRadius: "1rem !important",
@@ -22,6 +23,7 @@ const Logo = styled("img", {
 })
 
 export default function Login() {
+    const navigate = useNavigate();
     return (
         <div>
             <HeaderStyle className="justify-content-end py-3">
@@ -69,10 +71,10 @@ export default function Login() {
                                         </Row>
                                         <Row>
                                             <Col xs={6}>
-                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="submit">Entrar</Button>
+                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/home")}>Entrar</Button>
                                             </Col>
                                             <Col xs={6}>
-                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="submit">Cadastrar</Button>
+                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button">Cadastrar</Button>
                                             </Col>
                                         </Row>
                                         <Row className="justify-content-center mt-3">
