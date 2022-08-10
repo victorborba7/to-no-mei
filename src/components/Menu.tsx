@@ -15,13 +15,14 @@ import { HiOutlineDocumentReport } from "react-icons/hi"
 
 
 const SliderHodler = styled(Row, {
-    backgroundColor: "#CECECE",
+    backgroundColor: "#EEEEEE",
 });
 
 const LinkStyle = styled(Link, {
     padding: 5,
     color: "#00a1a0",
     textDecoration: "none",
+    borderRadius: "5px 5px 0 0",
     '&:hover': {
         color: "#FFFFFF !important",
         backgroundColor: "#0e002e"
@@ -47,66 +48,60 @@ export function Menu() {
         arrows: false,
         dots: false,
         infinite: true,
-        slidesToShow: 8,
+        slidesToShow: 7,
         slidesToScroll: 1
     };
 
     return (
-        <SliderHodler className="py-3 px-5">
+        <SliderHodler className="justify-content-center align-items-center pt-3 px-5">
             <Col xs={1}>
                 <IoIosArrowBack color="#000000" size="30px" cursor={"pointer"} onClick={() => gotoPrev()} />
             </Col>
             <Col xs={10}>
                 <Slider ref={customSlider} {...settings}>
-                    <LinkStyle to="/Home">
-                        <div className="text-center">
-                            <CgHome color="#00a1a0" size="30px" />
-                            <IconSubtitle>Home</IconSubtitle>
-                        </div>
-                    </LinkStyle>
-                    <LinkStyle to="/Home">
+                    <LinkStyle to="/mei">
                         <div className="text-center">
                             <CgHome color="#00a1a0" size="30px" />
                             <IconSubtitle>MEI</IconSubtitle>
                         </div>
                     </LinkStyle>
-                    <LinkStyle to="/Home">
+                    <LinkStyle to="/home">
                         <div className="text-center">
                             <AiOutlineFileAdd color="#00a1a0" size="30px" />
                             <IconSubtitle>Cadastros</IconSubtitle>
                         </div>
                     </LinkStyle>
-                    <LinkStyle to="/Home">
+                    <LinkStyle to="/home">
                         <div className="text-center">
                             <BsArchive color="#00a1a0" size="30px" />
                             <IconSubtitle>Estoque</IconSubtitle>
                         </div>
                     </LinkStyle>
-                    <LinkStyle to="/Home">
+                    <LinkStyle to="/home">
                         <div className="text-center">
                             <FaRegMoneyBillAlt color="#00a1a0" size="30px" />
                             <IconSubtitle>Gastos</IconSubtitle>
                         </div>
                     </LinkStyle>
-                    <LinkStyle to="/Home">
+                    <LinkStyle to="/home">
                         <div className="text-center">
                             <FaRegMoneyBillAlt color="#00a1a0" size="30px" />
                             <IconSubtitle>Vendas</IconSubtitle>
                         </div>
                     </LinkStyle>
-                    <LinkStyle to="/Home">
+                    <LinkStyle to="/home">
                         <div className="text-center">
                             <HiOutlineDocumentReport color="#00a1a0" size="30px" />
                             <IconSubtitle>Relatórios</IconSubtitle>
                         </div>
                     </LinkStyle>
-                    <LinkStyle to="/Home">
+                    <LinkStyle to="/home">
                         <div className="text-center">
                             <BsQuestionLg color="#00a1a0" size="30px" />
                             <IconSubtitle>Dúvidas</IconSubtitle>
                         </div>
                     </LinkStyle>
-                    <LinkStyle to="/Home">
+                    <LinkStyle to="/home">
                         <div className="text-center">
                             <BsChatSquareDots color="#00a1a0" size="30px" />
                             <IconSubtitle>Fale Conosco</IconSubtitle>

@@ -1,17 +1,13 @@
 import React from "react";
 import { Row, Col, Form } from "react-bootstrap";
 import { HeaderStyle } from "@/styles/GlobalStyle";
-import LogoBranco from "@/assets/logo_branco.png"
+import LogoBranco from "@/assets/logo_branco_verde.png"
 import { styled } from "@/stitches.config";
 import { MdPersonOutline } from "react-icons/md";
 import { CgHome } from "react-icons/cg";
 import { GiExitDoor } from "react-icons/gi";
 import { IoSettingsOutline } from "react-icons/io5";
 import { Link } from 'react-router-dom';
-
-// type TweetProps = {
-//     text: string;
-// }
 
 const Input = styled(Form.Control, {
     borderRadius: "1rem !important",
@@ -52,19 +48,19 @@ export function Header() {
             <Col xs={3}>
                 <Row className="justify-content-between">
                     <Col xs={3} className="text-center">
-                        <LinkStyle to="/Home">
+                        <LinkStyle to="/home">
                             <CgHome color="white" size="30px" />
                             <IconSubtitle>Home</IconSubtitle>
                         </LinkStyle>
                     </Col>
                     <Col xs={3} className="text-center">
-                        <LinkStyle to="/Home">
+                        <LinkStyle to="/home">
                             <IoSettingsOutline color="white" size="30px" />
                             <IconSubtitle>Configurações</IconSubtitle>
                         </LinkStyle>
                     </Col>
                     <Col xs={3} className="text-center">
-                        <LinkStyle to="/Home">
+                        <LinkStyle to="/home">
                             <MdPersonOutline color="white" size="30px" />
                             <IconSubtitle>Minha Conta</IconSubtitle>
                         </LinkStyle>

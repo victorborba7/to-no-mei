@@ -15,7 +15,7 @@ const Card = styled("div", {
     variants: {
         box: {
             true: {
-                boxShadow: "0px 0px 4px 3px #555555",
+                boxShadow: "0px 0px 4px 1px #999999",
             },
         },
         color: {
@@ -53,9 +53,9 @@ export default function Home() {
         <div className="text-center">
             <Header />
             <Menu />
-            <Row className="justify-content-center">
+            <Row className="justify-content-center mt-4">
                 <Col xs={10}>
-                    <h1 className="mt-3">Seja bem vindo(a),</h1>
+                    <h1>Seja bem vindo(a),</h1>
                     <h2>é uma grande alegria estarmos juntos.</h2>
                     <Row className="justify-content-between mt-4">
                         <Col xs={12} sm={3}>
@@ -96,7 +96,7 @@ export default function Home() {
                                         </Card>
                                     </Col>
                                     <Col xs={10}>
-                                        <p>Ver informação<LinkStyle to="/Home">completa</LinkStyle></p>
+                                        <p>Ver informação<LinkStyle to="/home">completa</LinkStyle></p>
                                     </Col>
                                 </Row>
                             </Card>
@@ -125,12 +125,12 @@ export default function Home() {
                                         </Card>
                                     </Col>
                                     <Col xs={10}>
-                                        <p>Ver informação<LinkStyle to="/Home">completa</LinkStyle></p>
+                                        <p>Ver informação<LinkStyle to="/home">completa</LinkStyle></p>
                                     </Col>
                                 </Row>
                             </Card>
                         </Col>
-                        <Col xs={12} sm={4} className="d-flex flex-column jutify-content-between align-items-center">
+                        <Col xs={12} sm={3} className="d-flex flex-column jutify-content-between align-items-center">
                             <Card box="true">
                                 <h5>LOREM IPSUM DOLOR SIT AMET</h5>
                             </Card>
