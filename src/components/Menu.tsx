@@ -15,7 +15,7 @@ import { HiOutlineDocumentReport } from "react-icons/hi"
 
 
 const SliderHodler = styled(Row, {
-    backgroundColor: "#EEEEEE",
+    backgroundColor: "#F8F9FA",
 });
 
 const LinkStyle = styled(Link, {

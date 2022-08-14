@@ -1,8 +1,10 @@
 import React from "react";
 import { Header } from "@/components/Header"
 import { Menu } from "@/components/Menu"
-import { Col, Row } from "react-bootstrap";
-import { styled } from "../stitches.config";
+import { Col, Container, Row } from "react-bootstrap";
+import { styled } from "@/stitches.config";
+import { Title, Subtitle } from "../styles/GlobalStyle";
+import * as Tabs from '@radix-ui/react-tabs';
 
 const MeiSection = styled(Row, {
     paddingTop: 75,
@@ -39,13 +41,13 @@ const Card = styled("div", {
 
 export default function Home() {
     return (
-        <div className="text-center">
+        <Container fluid className="text-center">
             <Header />
             <Menu />
             <Row className="justify-content-center mt-4">
                 <Col xs={3} className="text-start">
-                    <h1>MEU MEI</h1>
-                    <h3>O que deseja fazer?</h3>
+                    <Title>MEU MEI</Title>
+                    <Subtitle>O que deseja fazer?</Subtitle>
                     <p>Rafael Andrade do Nascimento 000.000.999-90</p>
                 </Col>
             </Row>
@@ -53,18 +55,8 @@ export default function Home() {
                 <Col xs={8}>
                     <Row className="justify-content-around align-items-center">
                         <Col xs={3}>
-                            <Card color="white" className="text-center">
-                                <h3>Declaração Anual (Mei)</h3>
-                            </Card>
-                        </Col>
-                        <Col xs={3}>
-                            <Card color="white" className="text-center">
-                                <h3>Gerador de DAS</h3>
-                            </Card>
-                        </Col>
-                        <Col xs={3}>
                             <Card color="blue" className="text-center">
-                                <h3>Consulta Optantes</h3>
+                                <h3>Gerador de DAS</h3>
                             </Card>
                         </Col>
                         <Col xs={3}>
@@ -75,6 +67,6 @@ export default function Home() {
                     </Row>
                 </Col>
             </MeiSection>
-        </div>
+        </Container>
     )
 }

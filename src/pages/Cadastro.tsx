@@ -1,11 +1,13 @@
 import React from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
-import { Button, HeaderStyle, Title } from "@/styles/GlobalStyle";
+import { Button, HeaderStyle, Title, Text } from "@/styles/GlobalStyle";
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa"
 import { styled } from "@/stitches.config";
 import LogoAzul from "@/assets/logo_azul_verde.png"
 import Mulher from "@/assets/mulher_login.webp"
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import * as Dialog from '@radix-ui/react-dialog';
+import { Subtitle } from "../styles/GlobalStyle";
 
 const Input = styled(Form.Control, {
     borderRadius: "1rem !important",
@@ -21,6 +23,25 @@ const Input = styled(Form.Control, {
 const Logo = styled("img", {
     width: "100%"
 })
+
+const Overlay = styled(Dialog.Overlay, {
+    background: 'rgba(0 0 0 / 0.5)',
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    display: 'grid',
+    placeItems: 'center',
+    overflowY: 'auto',
+  });
+  
+  const Content = styled(Dialog.Content, {
+    minWidth: 300,
+    background: 'white',
+    padding: 30,
+    borderRadius: 4,
+  });
 
 export default function Login() {
     const navigate = useNavigate();
@@ -48,38 +69,31 @@ export default function Login() {
                             </Row>
                             <Row className="justify-content-center justify-content-lg-start">
                                 <Col xs={12} className="text-center text-lg-start">
-                                    <Title>Faça seu Login</Title>
+                                    <Title>Esqueci minha senha</Title>
+                                    <Text>Para recuperar sua senha, informe seu endereço de email ou CPF/CNPJ que nós enviaremos um link para alteração da senha</Text>
                                 </Col>
                                 <Col xs={12}>
-                                    <Form className="mt-5">
+                                    <Form className="mt-2">
                                         <Row>
                                             <Form.Group>
-                                                <Input type="email" placeholder="email" />
+                                                <Input type="text" placeholder="email ou CPF/CNPJ" />
                                             </Form.Group>
                                         </Row>
-                                        <Row>
-                                            <Form.Group>
-                                                <Input type="password" className="mt-2" placeholder="senha" />
-                                            </Form.Group>
-                                        </Row>
-                                        <Row className="justify-content-center mt-3">
-                                            <Col xs={12} className="d-flex justify-content-center text-center">
-                                                <Form.Group>
-                                                    <Form.Check required label={<p>Li e aceito os <a href='www.google.com'>termos de serviço</a></p>} />
-                                                </Form.Group>
-                                            </Col>
-                                        </Row>
-                                        <Row>
+                                        <Row className="mt-3">
                                             <Col xs={6}>
-                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/home")}>Entrar</Button>
-                                            </Col>
-                                            <Col xs={6}>
-                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button">Cadastrar</Button>
-                                            </Col>
-                                        </Row>
-                                        <Row className="justify-content-center mt-3">
-                                            <Col xs={12} className="text-center">
-                                                <p>Esqueceu seu <Link to="/esquecisenha">nome de usuário ou senha?</Link></p>
+                                                <Dialog.Root>
+                                                    <Dialog.Trigger asChild>
+                                                        <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button">Enviar</Button>
+                                                    </Dialog.Trigger>
+                                                    <Dialog.Portal>
+                                                        <Overlay>
+                                                            <Content className="text-center p-5">
+                                                                <Title>Tudo pronto!</Title>
+                                                                <Text font="15">Enviaremos um link de redefinição de senha para o email cadastrado.</Text>
+                                                            </Content>
+                                                        </Overlay>
+                                                    </Dialog.Portal>
+                                                </Dialog.Root>
                                             </Col>
                                         </Row>
                                     </Form>

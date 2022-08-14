@@ -7,7 +7,65 @@ const HeaderStyle = styled(Row, {
 
 const Title = styled("h1", {
     color: "#0e002e",
-    fontSize: "3em"
+    fontSize: "2.5em",
+    variants: {
+        font: {
+            10: {
+                fontSize: "1em"
+            },
+            15: {
+                fontSize: "1.5em"
+            },
+            20: {
+                fontSize: "2em"
+            },
+            30: {
+                fontSize: "3em"
+            }
+        }
+    }
+});
+
+const Subtitle = styled("h2", {
+    color: "#0e002e",
+    fontSize: "2em",
+    variants: {
+        font: {
+            10: {
+                fontSize: "1em"
+            },
+            15: {
+                fontSize: "1.5em"
+            },
+            25: {
+                fontSize: "2.5em"
+            },
+            30: {
+                fontSize: "3em"
+            }
+        }
+    }
+});
+
+const Text = styled("p", {
+    color: "#0e002e",
+    fontSize: "1em",
+    variants: {
+        font: {
+            15: {
+                fontSize: "1.5em"
+            },
+            20: {
+                fontSize: "2em"
+            },
+            25: {
+                fontSize: "2.5em"
+            },
+            30: {
+                fontSize: "3em"
+            }
+        }
+    }
 });
 
 const Button = styled("button", {
@@ -51,5 +109,7 @@ const Button = styled("button", {
 export {
     HeaderStyle,
     Title,
-    Button
+    Subtitle,
+    Text,
+    Button,
 }

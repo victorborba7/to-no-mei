@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Router from "@/router/routes";
 
 const globalStyles = globalCss({
-  '*': { margin: 0, padding: 0 },
+  '*': { margin: "0", padding: "0" },
 });
 
 function App() {

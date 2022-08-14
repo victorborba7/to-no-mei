@@ -1,11 +1,12 @@
 import React from "react";
 import { Header } from "@/components/Header"
 import { Menu } from "@/components/Menu"
-import { Col, Row } from "react-bootstrap";
+import { Col, Container, Row } from "react-bootstrap";
 import { styled } from "../stitches.config";
 import Profile from "@/assets/unknown.jpeg"
 import { FaRegMoneyBillAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Title, Subtitle } from "@/styles/GlobalStyle";
 
 const Card = styled("div", {
     padding: 10,
@@ -50,13 +51,13 @@ const LinkStyle = styled(Link, {
 
 export default function Home() {
     return (
-        <div className="text-center">
+        <Container fluid className="text-center">
             <Header />
             <Menu />
             <Row className="justify-content-center mt-4">
                 <Col xs={10}>
-                    <h1>Seja bem vindo(a),</h1>
-                    <h2>é uma grande alegria estarmos juntos.</h2>
+                    <Title>Seja bem vindo(a),</Title>
+                    <Subtitle>é uma grande alegria estarmos juntos.</Subtitle>
                     <Row className="justify-content-between mt-4">
                         <Col xs={12} sm={3}>
                             <Card box="true">
@@ -138,6 +139,6 @@ export default function Home() {
                     </Row>
                 </Col>
             </Row>
-        </div>
+        </Container>
     )
 }
