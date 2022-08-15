@@ -69,10 +69,10 @@ export default function Login() {
                         <Col xs={10}>
                             <Row>
                                 <Col xs={6}>
-                                    <Button backgroundColor="lightYellow" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/")}>Cancelar</Button>
+                                    <Button bgColor="lightYellow" color="white" type="button" onClick={() => navigate("/")}>Cancelar</Button>
                                 </Col>
                                 <Col xs={6}>
-                                    <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button" onClick={() => nextStep()}>Continuar</Button>
+                                    <Button bgColor="darkBlue" color="white" type="button" onClick={() => nextStep()}>Continuar</Button>
                                 </Col>
                             </Row>
                         </Col>
@@ -117,10 +117,10 @@ export default function Login() {
                         <Col xs={10}>
                             <Row>
                                 <Col xs={6}>
-                                    <Button backgroundColor="lightYellow" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/")}>Cancelar</Button>
+                                    <Button bgColor="lightYellow" color="white" type="button" onClick={() => navigate("/")}>Cancelar</Button>
                                 </Col>
                                 <Col xs={6}>
-                                    <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button">Finalizar Cadastro</Button>
+                                    <Button bgColor="darkBlue" color="white" type="button">Finalizar Cadastro</Button>
                                 </Col>
                             </Row>
                         </Col>

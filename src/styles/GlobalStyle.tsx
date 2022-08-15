@@ -1,5 +1,46 @@
-import { Row } from "react-bootstrap";
+import { Form, Row } from "react-bootstrap";
 import { styled } from "@/stitches.config";
+
+const inputsStyle = {
+    variants: {
+        bgColor: {
+            darkBlue: {
+                backgroundColor: "#0e002e !important",
+            },
+            mintGreen: {
+                backgroundColor: "#5cb85c !important"
+            },
+            lightYellow: {
+                backgroundColor: "#efc04d !important"
+            },
+            lightRed: {
+                backgroundColor: "#cc5454 !important"
+            },
+            darkSeaGreen: {
+                backgroundColor: "#00a1a0 !important"
+            },
+            mediumBlue: {
+                backgroundColor: "#0058a0 !important"
+            },
+            grey: {
+                backgroundColor: "#F8F9FA !important"
+            }
+        },
+        color: {
+            black: {
+                color: "#000000 !important"
+            },
+            white: {
+                color: "#FFFFFF !important"
+            }
+        }
+    },
+    borderRadius: "1rem !important",
+    padding: "0.5rem 1rem !important",
+    border: "none !important",
+    fontWeight: "bold !important",
+    width: "100% !important"
+}
 
 const HeaderStyle = styled(Row, {
     backgroundColor: "#0e002e",
@@ -68,43 +109,9 @@ const Text = styled("p", {
     }
 });
 
-const Button = styled("button", {
-    variants: {
-        backgroundColor: {
-            darkBlue: {
-                backgroundColor: "#0e002e",
-            },
-            mintGreen: {
-                backgroundColor: "#5cb85c"
-            },
-            lightYellow: {
-                backgroundColor: "#efc04d"
-            },
-            lightRed: {
-                backgroundColor: "#cc5454"
-            },
-            darkSeaGreen: {
-                backgroundColor: "#00a1a0"
-            },
-            mediumBlue: {
-                backgroundColor: "#0058a0"
-            }
-        },
-        color: {
-            black: {
-                color: "#000000"
-            },
-            white: {
-                color: "#FFFFFF"
-            }
-        }
-    },
-    borderRadius: "1rem",
-    cursor: "pointer",
-    padding: "0.5rem 1rem",
-    border: "none",
-    fontWeight: "bold"
-});
+const Button = styled("button", inputsStyle);
+
+const Select = styled(Form.Select, inputsStyle);
 
 export {
     HeaderStyle,
@@ -112,4 +119,5 @@ export {
     Subtitle,
     Text,
     Button,
+    Select
 }

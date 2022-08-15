@@ -21,7 +21,7 @@ export function Home() {
                 return <Tweet text={tweet} />
             })}
 
-            <Button color="white" backgroundColor="darkBlue" onClick={createTweet}>Adicionar tweet</Button>
+            <Button color="white" bgColor="darkBlue" onClick={createTweet}>Adicionar tweet</Button>
         </div>
     );
 };

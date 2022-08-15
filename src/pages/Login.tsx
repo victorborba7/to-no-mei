@@ -71,10 +71,10 @@ export default function Login() {
                                         </Row>
                                         <Row>
                                             <Col xs={6}>
-                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/home")}>Entrar</Button>
+                                                <Button bgColor="darkBlue" color="white" type="button" onClick={() => navigate("/home")}>Entrar</Button>
                                             </Col>
                                             <Col xs={6}>
-                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/cadastro")}>Cadastrar</Button>
+                                                <Button bgColor="darkBlue" color="white" type="button" onClick={() => navigate("/cadastro")}>Cadastrar</Button>
                                             </Col>
                                         </Row>
                                         <Row className="justify-content-center mt-3">

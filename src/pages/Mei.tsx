@@ -4,7 +4,7 @@ import { Menu } from "@/components/Menu"
 import { Footer } from "@/components/Footer"
 import { Col, Container, Row, Table, Form } from "react-bootstrap";
 import { styled } from "@/stitches.config";
-import { Title, Subtitle, Text, Button } from "@/styles/GlobalStyle";
+import { Title, Subtitle, Text, Button, Select } from "@/styles/GlobalStyle";
 import * as Tabs from '@radix-ui/react-tabs';
 
 const MeiSection = styled(Row, {
@@ -94,11 +94,21 @@ export default function Home() {
                         </Col>
                         <Col xs={12}>
                             <Row>
-                                <Col xs={6}></Col>
-                                <Col xs={6}></Col>
+                                <Col xs={2}>
+                                    <Button bgColor="grey" color="black" css={{ cursor: "default !important"}}>Ano</Button>
+                                </Col>
+                                <Col xs={2}>
+                                    <Select bgColor="darkBlue" color="white">
+                                        <option>2022</option>
+                                        <option>2021</option>
+                                        <option>2020</option>
+                                        <option>2019</option>
+                                        <option>2018</option>
+                                    </Select>
+                                </Col>
                             </Row>
                         </Col>
-                        <Col xs={12}>
+                        <Col xs={12} className="mt-3">
                             <DASTable className="text-center">
                                 <DASThead>
                                     <tr>
@@ -224,7 +234,7 @@ export default function Home() {
                             </DASTable>
                         </Col>
                         <Col xs={3}>
-                            <Button backgroundColor="mintGreen" color="white" css={{ width: "100%" }}>Gerar PDF</Button>
+                            <Button bgColor="mintGreen" color="white">Gerar PDF</Button>
                         </Col>
                     </Row>
                 </Col>

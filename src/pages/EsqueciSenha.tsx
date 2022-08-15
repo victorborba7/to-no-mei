@@ -81,7 +81,7 @@ export default function Login() {
                                             <Col xs={6}>
                                                 <Dialog.Root>
                                                     <Dialog.Trigger asChild>
-                                                        <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button">Enviar</Button>
+                                                        <Button bgColor="darkBlue" color="white" type="button">Enviar</Button>
                                                     </Dialog.Trigger>
                                                     <Dialog.Portal>
                                                         <Overlay>
