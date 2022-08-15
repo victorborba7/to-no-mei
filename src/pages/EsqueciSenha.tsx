@@ -7,7 +7,6 @@ import LogoAzul from "@/assets/logo_azul_verde.png"
 import Mulher from "@/assets/mulher_login.webp"
 import { useNavigate } from "react-router-dom";
 import * as Dialog from '@radix-ui/react-dialog';
-import { Subtitle } from "../styles/GlobalStyle";
 
 const Input = styled(Form.Control, {
     borderRadius: "1rem !important",
@@ -44,7 +43,6 @@ const Overlay = styled(Dialog.Overlay, {
   });
 
 export default function Login() {
-    const navigate = useNavigate();
     return (
         <Container fluid>
             <HeaderStyle className="justify-content-end py-3">

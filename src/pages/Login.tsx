@@ -74,7 +74,7 @@ export default function Login() {
                                                 <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/home")}>Entrar</Button>
                                             </Col>
                                             <Col xs={6}>
-                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button">Cadastrar</Button>
+                                                <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/cadastro")}>Cadastrar</Button>
                                             </Col>
                                         </Row>
                                         <Row className="justify-content-center mt-3">

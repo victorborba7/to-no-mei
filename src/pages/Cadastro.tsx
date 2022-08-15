@@ -1,16 +1,13 @@
-import React from "react";
+import React, { useState, useCallback, CSSProperties, useEffect } from "react";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Button, HeaderStyle, Title, Text } from "@/styles/GlobalStyle";
 import { FaLinkedinIn, FaFacebookF, FaInstagram } from "react-icons/fa"
 import { styled } from "@/stitches.config";
 import LogoAzul from "@/assets/logo_azul_verde.png"
-import Mulher from "@/assets/mulher_login.webp"
 import { useNavigate } from "react-router-dom";
-import * as Dialog from '@radix-ui/react-dialog';
-import { Subtitle } from "../styles/GlobalStyle";
+import { useTransition, animated, AnimatedProps, useSpringRef } from '@react-spring/web'
 
 const Input = styled(Form.Control, {
-    borderRadius: "1rem !important",
     padding: "10px 20px !important",
     backgroundColor: "#f1f0f2 !important",
     color: "#0e002e !important",
@@ -22,29 +19,116 @@ const Input = styled(Form.Control, {
 
 const Logo = styled("img", {
     width: "100%"
-})
+});
 
-const Overlay = styled(Dialog.Overlay, {
-    background: 'rgba(0 0 0 / 0.5)',
-    position: 'fixed',
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    display: 'grid',
-    placeItems: 'center',
-    overflowY: 'auto',
-  });
-  
-  const Content = styled(Dialog.Content, {
-    minWidth: 300,
-    background: 'white',
-    padding: 30,
-    borderRadius: 4,
-  });
 
 export default function Login() {
-    const navigate = useNavigate();
+    const navigate = useNavigate();  
+    const [index, set] = useState(0)
+    const nextStep = useCallback(() => set(state => state + 1), [])
+    const transRef = useSpringRef()
+    const transitions = useTransition(index, {
+        ref: transRef,
+        keys: null,
+        from: { opacity: 0, transform: 'translate3d(0,100%,0)' },
+        enter: { opacity: 1, transform: 'translate3d(0%,0,0)' },
+        leave: { opacity: 0, transform: 'translate3d(0,-50%,0)' },
+    })
+    useEffect(() => {
+        transRef.start()
+    }, [index])
+
+    const pages: ((props: AnimatedProps<{ style: CSSProperties }>) => React.ReactElement)[] = [
+        ({ style }) => <Col xs={12}>
+            <animated.div style={{ ...style }}>
+                <Form className="mt-2">
+                    <Row className="flex-column justify-content-between align-items-center">
+                        <Col xs={10} className="mb-3">
+                            <Form.Group>
+                                <Form.Label>Email</Form.Label>
+                                <Input type="email" placeholder="exemplo@tonomei.com.br" />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={10} className="mb-3">
+                            <Form.Group>
+                                <Form.Label>Senha</Form.Label>
+                                <Input type="password" placeholder="********" />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={10} className="mb-3">
+                            <Form.Group>
+                                <Form.Label>Confirme sua senha</Form.Label>
+                                <Input type="password" placeholder="********" />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={10} className="mb-3">
+                            <Form.Group>
+                                <Form.Check required label={<p>Li e aceito os <a href='www.google.com'>termos de serviço</a></p>} />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={10}>
+                            <Row>
+                                <Col xs={6}>
+                                    <Button backgroundColor="lightYellow" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/")}>Cancelar</Button>
+                                </Col>
+                                <Col xs={6}>
+                                    <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button" onClick={() => nextStep()}>Continuar</Button>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Form>
+            </animated.div>
+        </Col>,
+        ({ style }) => <Col xs={12}>
+            <animated.div style={{ ...style }}>
+                <Form className="mt-2">
+                    <Row className="flex-column justify-content-between align-items-center">
+                        <Col xs={10} className="mb-3">
+                            <Form.Group>
+                                <Form.Label>CNPJ</Form.Label>
+                                <Input type="text" placeholder="00.000.000/0000-00" />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={10} className="mb-3">
+                            <Form.Group>
+                                <Form.Label>Nome Empresaria</Form.Label>
+                                <Input type="text" placeholder="To No Mei" />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={10} className="mb-3">
+                            <Form.Group>
+                                <Form.Label>CPF</Form.Label>
+                                <Input type="text" placeholder="000.000.000-00" />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={10} className="mb-3">
+                            <Form.Group>
+                                <Form.Label>Nome do Empresário</Form.Label>
+                                <Input type="text" placeholder="José Bonifácio Juanlissimo de Pereira" />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={10} className="mb-3">
+                            <Form.Group>
+                                <Form.Label>Telefone</Form.Label>
+                                <Input type="text" placeholder="(00) 0000-0000" />
+                            </Form.Group>
+                        </Col>
+                        <Col xs={10}>
+                            <Row>
+                                <Col xs={6}>
+                                    <Button backgroundColor="lightYellow" color="white" css={{ width: "100%" }} type="button" onClick={() => navigate("/")}>Cancelar</Button>
+                                </Col>
+                                <Col xs={6}>
+                                    <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button">Finalizar Cadastro</Button>
+                                </Col>
+                            </Row>
+                        </Col>
+                    </Row>
+                </Form>
+            </animated.div>
+        </Col>,
+    ]
     return (
         <Container fluid>
             <HeaderStyle className="justify-content-end py-3">
@@ -61,65 +145,22 @@ export default function Login() {
             <Row className="justify-content-center mt-5">
                 <Col xs={11}>
                     <Row className="justify-content-around align-items-center">
-                        <Col xs={12} lg={3} className="d-flex flex-column justify-content-around">
+                        <Col xs={12} lg={12} className="d-flex flex-column justify-content-around align-items-center">
                             <Row>
-                                <Col xs={12}>
+                                <Col xs={3}>
                                     <Logo src={LogoAzul} />
                                 </Col>
                             </Row>
-                            <Row className="justify-content-center justify-content-lg-start">
+                            <Row className="flex-column justify-content-between">
                                 <Col xs={12} className="text-center text-lg-start">
-                                    <Title>Esqueci minha senha</Title>
-                                    <Text>Para recuperar sua senha, informe seu endereço de email ou CPF/CNPJ que nós enviaremos um link para alteração da senha</Text>
+                                    <Title font="30">Cadastro de usuário</Title>
+                                    <Text>Selecione seu email e crie sua senha.</Text>
                                 </Col>
-                                <Col xs={12}>
-                                    <Form className="mt-2">
-                                        <Row>
-                                            <Form.Group>
-                                                <Input type="text" placeholder="email ou CPF/CNPJ" />
-                                            </Form.Group>
-                                        </Row>
-                                        <Row className="mt-3">
-                                            <Col xs={6}>
-                                                <Dialog.Root>
-                                                    <Dialog.Trigger asChild>
-                                                        <Button backgroundColor="darkBlue" color="white" css={{ width: "100%" }} type="button">Enviar</Button>
-                                                    </Dialog.Trigger>
-                                                    <Dialog.Portal>
-                                                        <Overlay>
-                                                            <Content className="text-center p-5">
-                                                                <Title>Tudo pronto!</Title>
-                                                                <Text font="15">Enviaremos um link de redefinição de senha para o email cadastrado.</Text>
-                                                            </Content>
-                                                        </Overlay>
-                                                    </Dialog.Portal>
-                                                </Dialog.Root>
-                                            </Col>
-                                        </Row>
-                                    </Form>
-                                </Col>
+                                {transitions((style, i) => {
+                                    const Page = pages[i]
+                                    return <Page style={style} />
+                                })}
                             </Row>
-                        </Col>
-                        <Col lg={7} style={{
-                            position: "relative"
-                        }}>
-                            <div style={{
-                                position: "absolute",
-                                display: "block",
-                                width: "60%",
-                                height: "600px",
-                                backgroundColor: "#0e002e",
-                                borderRadius: "50%",
-                                zIndex: "-1",
-                                top: 65
-                            }}></div>
-                            <img src={Mulher} style={{
-                                display: "block",
-                                borderRadius: "50%",
-                                width: "100%",
-                                maxWidth: "700px",
-                                margin: "0 auto"
-                            }} />
                         </Col>
                     </Row>
                 </Col>

@@ -1,14 +1,15 @@
 import React from "react";
 import { Header } from "@/components/Header"
 import { Menu } from "@/components/Menu"
-import { Col, Container, Row } from "react-bootstrap";
+import { Footer } from "@/components/Footer"
+import { Col, Container, Row, Table, Form } from "react-bootstrap";
 import { styled } from "@/stitches.config";
-import { Title, Subtitle } from "../styles/GlobalStyle";
+import { Title, Subtitle, Text, Button } from "@/styles/GlobalStyle";
 import * as Tabs from '@radix-ui/react-tabs';
 
 const MeiSection = styled(Row, {
     paddingTop: 75,
-    backgroundColor: "#EEEEEE",
+    backgroundColor: "#F8F9FA",
     borderBottom: "50px solid #0e002e"
 });
 
@@ -39,6 +40,23 @@ const Card = styled("div", {
     }
 });
 
+const DASTable = styled(Table, {
+    border: "2px solid black !important",
+    borderRadius: "50px !important"
+});
+
+const DASThead = styled("thead", {
+    borderBottom: "2px solid black !important",
+    backgroundColor: "#F8F9FA"
+});
+
+const DASTbody = styled("tbody", {
+});
+
+const DASTd = styled("td", {
+    border: "1px solid #F8F9FA"
+});
+
 export default function Home() {
     return (
         <Container fluid className="text-center">
@@ -48,7 +66,7 @@ export default function Home() {
                 <Col xs={3} className="text-start">
                     <Title>MEU MEI</Title>
                     <Subtitle>O que deseja fazer?</Subtitle>
-                    <p>Rafael Andrade do Nascimento 000.000.999-90</p>
+                    <Text>Rafael Andrade do Nascimento 000.000.999-90</Text>
                 </Col>
             </Row>
             <MeiSection className="justify-content-center align-items-center">
@@ -67,6 +85,151 @@ export default function Home() {
                     </Row>
                 </Col>
             </MeiSection>
-        </Container>
+            <Row className="justify-content-center mt-5">
+                <Col xs={8}>
+                    <Row className="flex-column justify-content-between align-items-center text-start">
+                        <Col xs={12}>
+                            <Title font="30">Gerador de DAS</Title>
+                            <Text font="15">Rafael Andrade do Nascimento 000.000.999-90</Text>
+                        </Col>
+                        <Col xs={12}>
+                            <Row>
+                                <Col xs={6}></Col>
+                                <Col xs={6}></Col>
+                            </Row>
+                        </Col>
+                        <Col xs={12}>
+                            <DASTable className="text-center">
+                                <DASThead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Mês</th>
+                                        <th>INSS</th>
+                                        <th>Situação</th>
+                                        <th>Juros</th>
+                                        <th>Total</th>
+                                        <th>Vencimento</th>
+                                    </tr>
+                                </DASThead>
+                                <DASTbody>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Janeiro</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Fevereiro</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Março</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Abril</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Maio</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Junho</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Julho</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Agosto</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Setembro</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Outubro</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Novembro</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                    <tr>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Dezembro</DASTd>
+                                        <DASTd><Form.Check /></DASTd>
+                                        <DASTd>Pago</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                        <DASTd>-</DASTd>
+                                    </tr>
+                                </DASTbody>
+                            </DASTable>
+                        </Col>
+                        <Col xs={3}>
+                            <Button backgroundColor="mintGreen" color="white" css={{ width: "100%" }}>Gerar PDF</Button>
+                        </Col>
+                    </Row>
+                </Col>
+            </Row >
+            <Footer />
+        </Container >
     )
 }
